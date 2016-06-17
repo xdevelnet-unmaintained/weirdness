@@ -8,7 +8,8 @@
 
 #define AVOID_MEMSET_OPTIMIZE(addr) *(volatile char *) addr = *(volatile char *) addr;
 
-#define MEMAREA 1024*1024*1024 // 1G
+#define MEGABYTES_MEMAREA 128lu
+#define MEMAREA MEGABYTES_MEMAREA*1024*1024lu
 #define TESTS 55
 
 typedef int8_t octet;
@@ -32,9 +33,9 @@ int main () {
 
 	double oncetime = (double) (tv2.tv_usec - tv1.tv_usec) / 1000000 +
 		(double) (tv2.tv_sec - tv1.tv_sec);
-	oncetime = oncetime / TESTS;
 
-	printf ("one memcpy speed: %f seconds, size: 1G\n", oncetime);
+
+	printf("one memcpy speed: %f M per sec", MEGABYTES_MEMAREA / (oncetime / TESTS));
 
 	return EXIT_SUCCESS;
 }
