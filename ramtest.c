@@ -15,8 +15,8 @@
 typedef int8_t octet;
 
 int main () {
-	void *mem = calloc (MEMAREA, sizeof(octet));
-	void *mem2 = calloc (MEMAREA, sizeof(octet));
+	void *mem = calloc(MEMAREA, sizeof(octet));
+	void *mem2 = calloc(MEMAREA, sizeof(octet));
 
 	if (mem == NULL or mem2 == NULL) return EXIT_FAILURE;
 
