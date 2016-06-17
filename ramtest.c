@@ -35,7 +35,7 @@ int main () {
 		(double) (tv2.tv_sec - tv1.tv_sec);
 
 
-	printf("one memcpy speed: %f M per sec", MEGABYTES_MEMAREA / (oncetime / TESTS));
+	printf("Virtual memory speed: %f megabytes per second\n", MEGABYTES_MEMAREA / (oncetime / TESTS));
 
 	return EXIT_SUCCESS;
 }
